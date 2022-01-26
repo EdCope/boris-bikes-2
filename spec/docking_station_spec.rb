@@ -13,9 +13,10 @@ describe DockingStation do
       #expect(subject.release_bike).to be_working
     #end
 
-    #As a member of the public
-    #So I can return bikes I've hired
-    #I want to dock my bike at the docking station
+    it "should stop releasing bikes when there are none" do
+      expect { subject.release_bike }.to raise_error 'Error'
+    end
+
   end
   describe "#dock_bike" do
     it{ expect(subject).to respond_to(:dock_bike).with(1).argument}

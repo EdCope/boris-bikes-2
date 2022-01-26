@@ -1,11 +1,12 @@
-# require_relative './bike.rb'
+#require_relative './bike.rb'
 
 class DockingStation
 
   attr_reader :bike
 
   def release_bike
-    Bike.new
+    fail 'Error' unless @bike
+    @bike
   end
 
   def dock_bike(bike)
