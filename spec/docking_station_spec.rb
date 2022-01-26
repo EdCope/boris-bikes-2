@@ -19,10 +19,12 @@ describe DockingStation do
   end
   describe "#dock_bike" do
     it{ expect(subject).to respond_to(:dock_bike).with(1).argument}
-    it "should check the status of a station" do
-      docking_station = DockingStation.new
+
+    it "docks something" do
       bike = Bike.new
-      expect(subject.station_status).to eq("Available")
+      expect(subject.dock_bike(bike)).to eq bike
     end
+
+    
   end
 end 
